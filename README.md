@@ -1,4 +1,4 @@
-# <img src="./public/cookie.svg" width="32" height="32" align="center" /> Cookie Banner
+# <img src="./public/cookie.svg" width="32" height="32" style="vertical-align: middle; margin-right: 8px;" /> Cookie Banner
 
 A GDPR-compliant cookie consent component built with Shadcn UI and Tailwind CSS. Features granular consent settings (Necessary, Analytics, Marketing), localStorage persistence, and multiple sizing options.
 
