@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "Cookie Banner",
-  "homepage": "sunsetradar.com",
+  "homepage": "https://cookie-banner-chi.vercel.app",
   "items": [
     {
       "name": "cookie-banner",
