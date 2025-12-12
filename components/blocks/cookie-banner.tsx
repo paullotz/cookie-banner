@@ -13,6 +13,7 @@ type Props = {
   onAccept?: () => void;
   onDecline?: () => void;
   className?: string;
+  privacyHref?: string;
 };
 
 const encodeBase64 = (data: string): string => {
@@ -27,6 +28,7 @@ export const CookieBanner: FC<Props> = ({
   onAccept,
   onDecline,
   className,
+  privacyHref = "privacy",
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
@@ -139,7 +141,7 @@ export const CookieBanner: FC<Props> = ({
             We use cookies to enhance your browsing experience, serve
             personalized content, and analyze our traffic. By clicking "Accept
             All", you consent to our use of cookies.{" "}
-            <a href="/privacy" className="underline hover:text-foreground">
+            <a href={`/${privacyHref}`} className="underline hover:text-foreground">
               Privacy Policy
             </a>
           </p>

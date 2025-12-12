@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
-import { Copy, Check } from "lucide-react";
+import { Copy, Check, Cookie } from "lucide-react";
 
 export default function Home() {
 	const [size, setSize] = useState<"sm" | "default" | "lg">("default");
@@ -84,6 +84,12 @@ export default function Layout() {
 			<div className="border-b border-zinc-800">
 				<div className="container mx-auto px-4 py-16 md:py-24">
 					<div className="text-center space-y-6 max-w-3xl mx-auto">
+						<div className="flex justify-center mb-8">
+							<div className="relative">
+								<div className="absolute inset-0 bg-orange-500/20 blur-3xl rounded-full" />
+								<Cookie className="h-32 w-32 text-orange-500 animate-[spin_10s_linear_infinite] relative z-10" />
+							</div>
+						</div>
 						<h1 className="text-4xl md:text-6xl font-bold text-balance">
 							GDPR Cookie Banner
 						</h1>
