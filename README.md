@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
 
 | Prop | Type | Default | Description |
 | --- | --- | --- | --- |
-| `size` | type | "default" | Controls the size and padding of the banner. |
+| `size` | string literal | "default" | Controls the size and padding of the banner. |
 | `onAccept` | `() => void` | `undefined` | Callback fired when the user accepts all cookies or saves preferences. |
 | `onDecline` | `() => void` | `undefined` | Callback fired when the user declines non-essential cookies. |
 | `className` | `string` | `undefined` | Additional CSS classes to apply to the container. |
