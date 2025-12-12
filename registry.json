@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "Cookie Banner",
+  "homepage": "sunsetradar.com",
+  "items": [
+    {
+      "name": "cookie-banner",
+      "version": "1.0",
+      "type": "registry:block",
+      "title": "Cookie Banner",
+      "description": "Beautiful GDPR compliant cookie banner.",
+      "files": [
+        {
+          "path": "components/blocks/cookie-banner.tsx",
+          "type": "registry:component"
+        }
+      ]
+    }
+  ]
+}
