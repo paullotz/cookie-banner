@@ -7,7 +7,7 @@ A GDPR-compliant cookie consent component built with Shadcn UI and Tailwind CSS.
 Run the following command to add the component to your project:
 
 ```bash
-npx shadcn@latest add [https://cookie-banner-chi.vercel.app/r/cookie-banner.json](https://cookie-banner-chi.vercel.app/r/cookie-banner.json)
+npx shadcn@latest add https://cookie-banner-chi.vercel.app/r/cookie-banner.json
 ````
 
 ## Usage
