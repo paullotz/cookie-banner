@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cookie Banner
 
-## Getting Started
+A GDPR-compliant cookie consent component built with Shadcn UI and Tailwind CSS. Features granular consent settings (Necessary, Analytics, Marketing), localStorage persistence, and multiple sizing options.
 
-First, run the development server:
+## Installation
+
+Run the following command to add the component to your project:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npx shadcn@latest add [https://cookie-banner-chi.vercel.app/r/cookie-banner.json](https://cookie-banner-chi.vercel.app/r/cookie-banner.json)
+````
+
+## Usage
+
+Import the component and place it in your root layout or specific pages.
+
+```tsx
+import { CookieBanner } from "@/components/blocks/cookie-banner"
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>
+        {children}
+        <CookieBanner />
+      </body>
+    </html>
+  )
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Props
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `size` | `"sm" | "default" | "lg"` | `"default"` | Controls the size and padding of the banner. |
+| `onAccept` | `() => void` | `undefined` | Callback fired when the user accepts all cookies or saves preferences. |
+| `onDecline` | `() => void` | `undefined` | Callback fired when the user declines non-essential cookies. |
+| `className` | `string` | `undefined` | Additional CSS classes to apply to the container. |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Examples
 
-## Learn More
+### Custom Size
 
-To learn more about Next.js, take a look at the following resources:
+```tsx
+<CookieBanner size="lg" />
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Event Handling
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Use callbacks to initialize analytics or pixel scripts only after consent is given.
 
-## Deploy on Vercel
+```tsx
+<CookieBanner
+  onAccept={() => {
+    // Initialize Google Analytics or GTM here
+    console.log("Cookies accepted");
+  }}
+  onDecline={() => {
+    // Ensure tracking scripts are disabled
+    console.log("Cookies declined");
+  }}
+/>
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Storage
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This component uses `localStorage` key `cookie-consent` to persist user preferences. The value is a Base64 encoded string containing the preference object:
+
+```json
+{
+  "necessary": true,
+  "analytics": false,
+  "marketing": false
+}
+```
